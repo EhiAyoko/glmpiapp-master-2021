@@ -1,0 +1,44 @@
+<ion-header>
+	<ion-toolbar color="tertiary">
+    <ion-buttons slot="start" class="ion-padding">
+      <ion-icon size="large" name="menu-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title>GLMPI Mobile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content">
+  <ion-card class="ion-text-center">
+    <div>
+      <img style="width: 50%;height: 100%;background: #eee;" src="assets/imgs/glmpilogo.png">
+    </div>
+    <ion-card-content class="ion-text-center">
+      <ion-card-title class="big-title ion-padding dd">
+        Welcome to the GLMPI App
+      </ion-card-title>
+      <ion-text class="ion-padding" style="font-size: 13px;">Welcome to the first GLMPI Mobile App. The girls from GLMPI, got the opportunity to build this app, learn more about the journey here</ion-text>
+      <div *ngIf="loggedin">
+        <p>&nbsp;</p>
+      <ion-button mode="md" class="btn2" expand="block" (click)="pushPage('PostListPage')">View HERstories</ion-button>
+</div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content class="ion-text-center">
+      <ion-card-title class="big-title" class="ion-text-center">
+        Login to see HERstories, Complete your daily check ins and More!
+      </ion-card-title>
+
+      <ion-button mode="md" expand="block" class="btn2" (click)="openLoginModal()"><span *ngIf="!loggedin">Login</span><span *ngIf="loggedin">Logout</span></ion-button>
+      <p>Don't have a login? Please create an account on <a href="https://glmpiapp.com/register">our app website</a></p>
+      <div *ngIf="loggedin">
+        <p>&nbsp;</p>
+        <h2>GLMPI MEMBERS ONLY</h2>
+        <p>Here's today's live and HERstory...</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/1sK6vNrJbZ0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  
+</ion-content>

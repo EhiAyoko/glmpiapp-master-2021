@@ -1,0 +1,17 @@
+
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false" color="dark" menu="first"><ion-icon size="large" color="light" name="menu-outline"></ion-icon></ion-menu-button>
+    </ion-buttons>
+    <ion-title><span [innerHTML]="selectedItem.title.rendered"></span></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content">
+ <div *ngIf="selectedItem" class="selection">
+
+    <h2 [innerHTML]="selectedItem.title.rendered"></h2>
+    <div *ngIf="content" [innerHTML]="content"></div>
+ </div>
+</ion-content>

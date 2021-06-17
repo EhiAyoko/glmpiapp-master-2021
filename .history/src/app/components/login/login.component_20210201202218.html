@@ -1,0 +1,30 @@
+
+<ion-header>
+	<ion-toolbar color="tertiary">
+		<ion-title>Login</ion-title>
+	<ion-buttons slot="end" (click)="dismiss()">
+			<ion-icon name="close"></ion-icon>
+	</ion-buttons>
+	</ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding content">
+	<form (ngSubmit)="doLogin()" padding *ngIf="!loggedin">
+    <ion-list class="ion-margin colo rr">
+    <ion-item class="colo rr">
+      <ion-label position="floating">Username</ion-label>
+      <ion-input type="text" [(ngModel)]="login.user" name="user" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></ion-input>
+    </ion-item>
+    <ion-item class="colo">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" [(ngModel)]="login.pass" name="pass" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></ion-input>
+    </ion-item>
+    <ion-button mode="md" expand="block" type="submit" class="ion-margin btn2">Submit</ion-button>
+  </ion-list>
+  </form>
+	<p class="pp">Don't have a login? Please create an account on <a href="https://glmpiapp.com/register">our app website</a></p>
+	<div *ngIf="loggedin">
+		Welcome back!
+		<p>&nbsp;</p>
+		<ion-button (click)="doLogout()">Logout</ion-button>
+	</div>
+</ion-content>

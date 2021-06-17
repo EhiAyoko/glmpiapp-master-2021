@@ -1,0 +1,59 @@
+
+  <ion-header>
+    <ion-toolbar color="tertiary">
+      <ion-buttons slot="start">
+        <ion-menu-button autoHide="false" color="dark" menu="first"><ion-icon size="large" color="light" name="menu-outline"></ion-icon></ion-menu-button>
+      </ion-buttons>
+      <ion-title>checkin</ion-title>
+    </ion-toolbar>
+  </ion-header> 
+
+<ion-content class="content">
+
+<ion-card>
+  <ion-card-header>
+  </ion-card-header>
+  <ion-card-title class="big-title ion-padding dd ion-text-center">
+    The Daily Checkin 
+  </ion-card-title>
+  <ion-card-content class="ion-text-center">
+   How are you feeling today?  
+  </ion-card-content>
+  <ion-grid class="ion-text-center">
+    <ion-row>
+      <ion-col>
+        <div class="rr"> 
+          <ion-img width="80" (click)="happymood()" height="80" src="assets/imgs/beaming.png"></ion-img>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div class="rr">
+          <ion-img width="80" height="80" (click)="inocentmood()" src="assets/imgs/upside-down.png"></ion-img>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div class="rr">
+          <ion-img width="80" height="80" (click)="silentmood()" src="assets/imgs/neutral.png"></ion-img>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div class="rr">
+          <ion-img width="80" height="80" (click)="randommood()" src="assets/imgs/woozy.png"></ion-img>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div class="rr">
+          <ion-img width="80" height="80" (click)="saddmood()" src="assets/imgs/disappointed.png"></ion-img>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div class="rr">
+          <ion-img width="80" height="80"  (click)="angrymood()" src="assets/imgs/angry.png"></ion-img>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-card>
+</ion-content>

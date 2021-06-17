@@ -1,0 +1,35 @@
+<!-- <ion-menu *ngIf="menus" side="start" menuId="first" contentId="main"> -->
+  <ion-menu side="start" menuId="first" contentId="main">
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title></ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+		<ion-list-header class="ion-text-wrap" *ngIf="login_data">
+		<ion-avatar *ngIf="login_data.avatar">
+		  <img [src]="login_data.avatar" />
+		</ion-avatar>
+		<p class="loggedin-msg"><b>login_data.message</b></p>
+
+		</ion-list-header>
+
+		<ion-button slot="start" *ngFor="let item of menus" (click)="menuLink(item)">
+			<ion-icon name="{{item.icon}}"></ion-icon>
+		{{item.title}}
+		</ion-button>
+		
+		<div padding>
+			<ion-button expand="block" slot="start" class="menu-login-button" (click)="openLoginModal()">
+			<ion-icon name="log-in"></ion-icon>
+			<span *ngIf="login_data">Logout</span><span *ngIf="!login_data">Login</span></ion-button>
+		</div>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-router-outlet id="main" #content swipeBackEnabled="false"></ion-router-outlet>
+

@@ -1,0 +1,53 @@
+
+.toolbar-background {
+	background: #E047AB;
+}
+
+.toolbar, .toolbar-title, .toolbar ion-icon {
+	color: #fff;
+}
+
+.button-md-secondary, .button-ios-secondary {
+	color: #333;
+	ion-icon {
+		color: #333;
+	}
+}
+
+.item {
+	background-color: transparent
+}
+
+.big-title {
+	font-size: 2.2 rem;
+	color: #E047AB;
+	font-weight: bold
+}
+
+.card {
+	background: #fff;
+	img {
+		border-bottom: 1px solid #eee;
+	}
+	p {
+		margin-bottom: 10px;
+	}
+}
+
+.content {
+	--background:#333;
+}
+
+.menu-inner .content {
+	background-color: #333;
+
+	.item {
+		color: #eee;
+		font-size: 1.8rem;
+
+		.item-inner {
+			border-bottom: 1px solid rgba(255,255,255,.3)
+		}
+	}
+	
+}

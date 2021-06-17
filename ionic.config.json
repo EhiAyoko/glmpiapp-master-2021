@@ -1,0 +1,7 @@
+{
+  "name": "glmpiapp-master-2021",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

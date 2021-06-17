@@ -1,0 +1,13 @@
+
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title><span [innerHTML]="selectedItem.title.rendered"></span></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content">
+ <div *ngIf="selectedItem" class="selection">
+    <h2 [innerHTML]="selectedItem.title.rendered"></h2>
+    <div *ngIf="content" [innerHTML]="content"></div>
+ </div>
+</ion-content>

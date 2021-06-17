@@ -1,0 +1,38 @@
+<ion-header>
+	<ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false" color="dark" menu="first"><ion-icon size="large" color="light" name="menu-outline"></ion-icon></ion-menu-button>
+    </ion-buttons>
+    <ion-title>GLMPI HERstories</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <span class="ion-text-center" *ngIf="loggedin">
+  <h2>Please log into your account to see HERstories</h2>
+</span>
+    <ion-card class="ion-text-center">
+      <ion-card-header>
+        Checkout the most recent HERstories available!
+      </ion-card-header>
+    </ion-card>
+  <ion-list class="post-list ion-no-padding">
+    <ion-item *ngFor="let item of items" (click)="itemTapped($event, item)" class="red">
+      <ion-avatar slot="start" *ngIf="item.featured_image_urls">
+        <img *ngIf="item.featured_image_urls && item.featured_image_urls.thumbnail" src="{{item.featured_image_urls.thumbnail}}">
+        <img *ngIf="!item.featured_image_urls || !item.featured_image_urls.thumbnail" src="assets/default.png">
+      </ion-avatar>
+<ion-label>
+  <h2 *ngIf="item.title && item.title.rendered" [innerHTML]="item.title.rendered"></h2>
+  <p *ngIf="item.excerpt && item.excerpt.rendered" [innerHTML]="item.excerpt.rendered"></p>
+</ion-label>
+    </ion-item>
+  </ion-list>
+
+ <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+  <ion-refresher-content></ion-refresher-content>
+</ion-refresher>
+</ion-content>
